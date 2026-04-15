@@ -1,0 +1,21 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin-top: -400px;
+    border-radius: 50%;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
