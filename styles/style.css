@@ -4,6 +4,7 @@ body, html {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .conteiner {
@@ -12,7 +13,7 @@ body, html {
     align-items: center;
     flex-direction: column;
     background-color: #fff;
-    transform: translateY(-25px);
+    transform: translateY(-35px);
     border-radius: 50%;
 }
 
