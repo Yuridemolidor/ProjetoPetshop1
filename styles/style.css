@@ -14,9 +14,17 @@ body {
 /* HEADER */
 header {
     display: flex;
-    flex-direction: row-reverse;
     text-align: center;
-    padding: 30px 20px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+}
+.header-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 header h1 {
@@ -30,16 +38,15 @@ header p {
 
 /* BOTÃO (3 risquinhos) */
 .menu-toggle {
-    margin-top: -20px;
     font-size: 25px;
     cursor: pointer;
-    padding: 10px;
+    z-index: 2;
 }
 
 /* MENU ESCONDIDO */
 .menu {
     position: absolute;
-    top: 5px;
+    top: -25px;
     right: -10px;
     background: #fff;
     border-radius: 10px;
@@ -75,7 +82,7 @@ nav {
     padding: 15px;
     background: #fff;
     border-radius: 50px;
-    margin: 0 20px;
+    margin: 40px 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -93,7 +100,7 @@ nav a:hover {
 /* BANNER */
 .banner {
     text-align: center;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .banner h1 {
@@ -166,4 +173,21 @@ footer {
     background: #fff;
     margin-top: 40px;
     border-radius: 20px 20px 0 0;
+}
+
+@media (min-width: 768px) {
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-text {
+        position: static;
+        transform: none;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
 }
