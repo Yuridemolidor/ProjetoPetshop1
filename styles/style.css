@@ -1,105 +1,169 @@
-body, html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fb;
+    color: #333;
 }
 
+/* CONTAINER PRINCIPAL */
 .conteiner {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    color: #007BFF;
+    font-size: 32px;
+}
+
+header p {
+    color: #666;
+}
+
+/* BOTÃO (3 risquinhos) */
+.menu-toggle {
+    margin-top: -20px;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* MENU ESCONDIDO */
+.menu {
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    background: #fff;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    width: 180px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* LINKS */
+.menu a {
+    padding: 12px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #007BFF;
+    color: #fff;
+}
+
+/* QUANDO ABRIR */
+.menu.active {
+    display: flex;
+}
+
+/* NAVBAR */
+nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    transform: translateY(-35px);
-    border-radius: 50%;
+    gap: 30px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 50px;
+    margin: 0 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.conteiner img {
-    width: 200px;
-    height: auto;
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.txt {
-    font-family: 'roboto', sans-serif;
-    color: #666666;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.xartins {
-    margin-bottom: 0px;
-}
-
-.descricao {
-    font-size: 18px;
-    margin-top: 0px;
-}
-
-.azul {
+nav a:hover {
     color: #007BFF;
 }
 
-.campo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    font-weight: bold;
+/* BANNER */
+.banner {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-.label {
-    font-family: 'roboto', sans-serif;
-    color: #000000;
-    margin-bottom: -10px;
-    align-self: flex-start;
+.banner h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-.input {
-    width: 250px;
-    padding: 10px;
-    margin: 10px 0;
-    font-family: 'roboto', sans-serif;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.banner p {
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.button {
-    padding: 10px;
-    font-family: 'roboto', sans-serif;
-    cursor: pointer;
-}
-
-.entrar {
-    width: 270px;
-    background-color: #007BFF;
+/* BOTÃO PADRÃO (MESMA IDENTIDADE DO LOGIN) */
+.btn {
+    padding: 12px 25px;
+    background: #007BFF;
     color: #fff;
     border: none;
     border-radius: 50px;
-    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.escolha {
-    margin-top: 40px;
+.btn:hover {
+    background: #0056b3;
 }
 
-.social-buttons {
-    display: flex;
-    width: 270px;
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+/* BOTÕES DE SERVIÇO */
+.btn-pet {
+    padding: 12px 20px;
+    margin: 10px;
     border: none;
-    justify-content: center;
-    justify-content: space-between;
+    border-radius: 30px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
-.google, .facebook {
-    width: 120px;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: -10px;
+.btn-pet i {
+    color: #007BFF;
+    margin-right: 5px;
 }
 
-.cadastro {
-    margin-top: 30px;
+.btn-pet:hover {
+    transform: translateY(-3px);
+    background: #007BFF;
+    color: #fff;
+}
+
+.btn-pet:hover i {
+    color: #fff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
 }

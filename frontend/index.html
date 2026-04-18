@@ -27,6 +27,10 @@
             font-family: 'Poppins', sans-serif;
         }
     </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/reset.css"/>
+    <link rel="stylesheet" href="../styles/style.css"/>
 
     <!-- Open Graph (para redes sociais) -->
     <meta property="og:title" content="XarTins - Tecnologia para Pet Shops">
@@ -37,10 +41,23 @@
 </head>
 
 <body>
-
 <header>
-    <h1>XarTins</h1>
-    <p>Soluções digitais para o seu negócio</p>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <nav class="menu" id="menu">
+        <a href="#">Perfil</a>
+        <a href="#">Configurações</a>
+        <a href="./login.html">Login</a>
+        <a href="#">Cadastro</a>
+        <a href="#">Contas</a>
+    </nav>
+    
+    <div>
+        <h1>XarTins</h1>
+        <p>Soluções digitais para o seu negócio</p>
+    </div>
 </header>
 
 <nav>
@@ -88,6 +105,13 @@
 <footer>
     <p>© 2026 XarTins - Todos os direitos reservados</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
