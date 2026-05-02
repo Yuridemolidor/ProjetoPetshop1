@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pet Shop Toyo</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../styles/perfilLoja.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -82,6 +82,27 @@
   <button onclick="menu('perfil')">👤</button>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  function comprar(produto) {
+  alert("Produto adicionado: " + produto);
+}
+
+function trocarAba(aba) {
+  document.getElementById('produtos').classList.add('hidden');
+  document.getElementById('servicos').classList.add('hidden');
+
+  document.getElementById(aba).classList.remove('hidden');
+
+  document.querySelectorAll('.tabs button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  event.target.classList.add('active');
+}
+
+function menu(opcao) {
+  alert("Você clicou em: " + opcao);
+}
+</script>
 </body>
 </html>
