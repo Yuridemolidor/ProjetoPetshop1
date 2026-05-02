@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Shop Toyo</title>
+  <link rel="stylesheet" href="../styles/perfilLoja.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="top-bar">
+    <span>☰</span>
+    <h2>🐾 PET shop Toyo</h2>
+    <div>
+      🔍 🛒
+    </div>
+  </div>
+
+  <div class="banner">
+    <div>
+      <h1>Bem-vindo! 👋</h1>
+      <p>Tudo para o seu pet em um só lugar.</p>
+    </div>
+    <img src="https://placedog.net/300" alt="pet">
+  </div>
+</header>
+
+<section class="tabs">
+  <button class="active" onclick="trocarAba('produtos')">Produtos</button>
+  <button onclick="trocarAba('servicos')">Serviços</button>
+</section>
+
+<section class="categorias">
+  <h3>Categorias</h3>
+  <div class="lista">
+    <div>🦴<p>Brinquedos</p></div>
+    <div>🍖<p>Alimentação</p></div>
+    <div>👕<p>Roupas</p></div>
+    <div>🧴<p>Higiene</p></div>
+    <div>🐾<p>Acessórios</p></div>
+  </div>
+</section>
+
+<section class="produtos" id="produtos">
+  <h3>Produtos em destaque</h3>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/100">
+      <h4>Osso resistente</h4>
+      <p>R$ 15,00</p>
+      <button onclick="comprar('Osso')">🛒</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/100">
+      <h4>Ração Premium</h4>
+      <p>R$ 70,00</p>
+      <button onclick="comprar('Ração')">🛒</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/100">
+      <h4>Pelúcia</h4>
+      <p>R$ 80,00</p>
+      <button onclick="comprar('Pelúcia')">🛒</button>
+    </div>
+  </div>
+</section>
+
+<section class="servicos hidden" id="servicos">
+  <h3>Serviços</h3>
+  <p>Banho, tosa e cuidados especiais 🐶</p>
+</section>
+
+<footer>
+  <button onclick="menu('inicio')">🏠</button>
+  <button onclick="menu('explorar')">🔍</button>
+  <button class="central">🐾</button>
+  <button onclick="menu('salvos')">❤️</button>
+  <button onclick="menu('perfil')">👤</button>
+</footer>
+
+<script>
+  function comprar(produto) {
+  alert("Produto adicionado: " + produto);
+}
+
+function trocarAba(aba) {
+  document.getElementById('produtos').classList.add('hidden');
+  document.getElementById('servicos').classList.add('hidden');
+
+  document.getElementById(aba).classList.remove('hidden');
+
+  document.querySelectorAll('.tabs button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  event.target.classList.add('active');
+}
+
+function menu(opcao) {
+  alert("Você clicou em: " + opcao);
+}
+</script>
+</body>
+</html>

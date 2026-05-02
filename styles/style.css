@@ -1,105 +1,261 @@
-body, html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6fb;
+  padding: 15px;
 }
 
-.conteiner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    transform: translateY(-35px);
-    border-radius: 50%;
+/* MENU LATERAL */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 220px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1000;
 }
 
-.conteiner img {
-    width: 200px;
-    height: auto;
+.menu-lateral a {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  transition: 0.3s;
 }
 
-.txt {
-    font-family: 'roboto', sans-serif;
-    color: #666666;
-    margin-top: 10px;
-    text-align: center;
+.menu-lateral a:hover {
+  background: #007BFF;
+  color: #fff;
 }
 
-.xartins {
-    margin-bottom: 0px;
+/* MENU ATIVO */
+.menu-lateral.active {
+  right: 0;
 }
 
-.descricao {
-    font-size: 18px;
-    margin-top: 0px;
+/* HEADER */
+header {
+  margin-bottom: 20px;
 }
 
-.azul {
-    color: #007BFF;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
-.campo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    font-weight: bold;
+.user-icon {
+  cursor: pointer;
+  background: #007BFF;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
 }
 
-.label {
-    font-family: 'roboto', sans-serif;
-    color: #000000;
-    margin-bottom: -10px;
-    align-self: flex-start;
+.search {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #eaeef5;
 }
 
-.input {
-    width: 250px;
-    padding: 10px;
-    margin: 10px 0;
-    font-family: 'roboto', sans-serif;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+/* SECTION */
+.section {
+  margin-top: 25px;
 }
 
-.button {
-    padding: 10px;
-    font-family: 'roboto', sans-serif;
-    cursor: pointer;
+.section h3 {
+  margin-bottom: 15px;
 }
 
-.entrar {
-    width: 270px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    margin-top: 15px;
+/* CATEGORIAS */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-.escolha {
-    margin-top: 40px;
+.cat {
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
 }
 
-.social-buttons {
-    display: flex;
-    width: 270px;
-    border: none;
-    justify-content: center;
-    justify-content: space-between;
+/* CORES */
+.pet { background: #f4c542; }
+.mec { background: #ff6b6b; color: white; }
+.res { background: #4dabf7; color: white; }
+.barb { background: #dee2e6; }
+.acad { background: #c5d8ff; }
+.elec { background: #ffe0b2; }
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 10px;
 }
 
-.google, .facebook {
-    width: 120px;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-top: -10px;
+.card {
+  flex: 1;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-.cadastro {
-    margin-top: 30px;
+.card i {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+/* NAV INFERIOR */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+.bottom-nav div {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* TRANSIÇÃO GLOBAL (suaviza tudo) */
+* {
+  transition: all 0.2s ease;
+}
+
+/* ================= BOTÕES ================= */
+button, .btn, .cat, .card, .bottom-nav div {
+  transition: all 0.2s ease;
+}
+
+/* EFEITO AO CLICAR */
+button:active,
+.cat:active,
+.card:active,
+.bottom-nav div:active {
+  transform: scale(0.95);
+}
+
+/* ================= CATEGORIAS ================= */
+.cat {
+  cursor: pointer;
+}
+
+.cat:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ================= CARDS ================= */
+.card {
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+/* ÍCONE ANIMADO */
+.card i {
+  transition: 0.3s;
+}
+
+.card:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* ================= BOTÃO MENU ================= */
+.menu-toggle {
+  transition: 0.3s;
+}
+
+.menu-toggle:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
+/* ================= MENU LATERAL ================= */
+.menu-lateral {
+  transition: right 0.3s ease;
+}
+
+/* LINKS DO MENU */
+.menu-lateral a {
+  position: relative;
+}
+
+.menu-lateral a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 2px;
+  background: #007BFF;
+  transition: 0.3s;
+}
+
+.menu-lateral a:hover::after {
+  width: 100%;
+}
+
+/* ================= NAVBAR INFERIOR ================= */
+.bottom-nav div {
+  cursor: pointer;
+}
+
+.bottom-nav div:hover {
+  transform: translateY(-3px);
+}
+
+/* ÍCONE DA NAV */
+.bottom-nav div:active {
+  transform: scale(0.9);
+}
+
+/* ================= INPUT ================= */
+.search {
+  transition: 0.3s;
+}
+
+.search:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 2px #007BFF33;
+  transform: scale(1.02);
+}
+
+/* ================= ANIMAÇÃO DE ENTRADA ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* APLICAÇÃO */
+header, .section, .card, .cat {
+  animation: fadeUp 0.5s ease;
 }

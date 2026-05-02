@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
+    <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,6 +27,10 @@
             font-family: 'Poppins', sans-serif;
         }
     </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/reset.css"/>
+    <link rel="stylesheet" href="../styles/style.css"/>
 
     <!-- Open Graph (para redes sociais) -->
     <meta property="og:title" content="XarTins - Tecnologia para Pet Shops">
@@ -38,56 +42,76 @@
 
 <body>
 
+    <div class="menu-lateral" id="menu">
+        <a href="./perfil.html">Perfil</a>
+        <a href="./configuração.html">Configurações</a>
+        <a href="./login.html">Login</a>
+        <a href="#">Cadastro</a>
+        <a href="#">Contas</a>
+    </div>
+
 <header>
-    <h1>XarTins</h1>
-    <p>Soluções digitais para o seu negócio</p>
+        <div class="top-bar">
+            <div class="user-icon" onclick="window.location.href='./perfil.html'">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <h2>Olá "usuario",</h2>
+    <p>O que gostaria de fazer a seguir?</p>
+
+    <input type="text" placeholder="Pesquisar serviços..." class="search">
 </header>
 
-<nav>
-    <a href="#">Início</a>
-    <a href="#">Serviços</a>
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
-</nav>
+<section class="section">
+    <h3>Categorias populares</h3>
 
-<section class="banner">
-    <h1>Transforme seu negócio com tecnologia</h1>
-    <p>Sites, sistemas e marketing digital para sua empresa crescer</p>
-    <button class="btn">Saiba mais</button>
+    <div class="categories">
+        <div class="cat pet">Petshop</div>
+        <div class="cat mec">Mecânica</div>
+        <div class="cat res">Restaurante</div>
+        <div class="cat barb">Barbearia</div>
+        <div class="cat acad">Academia</div>
+        <div class="cat elec">Eletrônicos</div>
+    </div>
 </section>
 
 <section class="section">
-    <h2>Serviços</h2>
-    <p>
-      <button class="btn-pet">
-    <i class="fa-solid fa-paw"></i> Pet Shop
-</button>
-    </p>
-    <p>
-      <button class="btn-pet">
-    <i class="fa-solid fa-paw"></i> Pet Shop
-</button>
-    </p>
-    <p>
-      <button class="btn-pet">
-    <i class="fa-solid fa-paw"></i> Pet Shop
-</button>
-    </p>
-    <p>
-      <button class="btn-pet">
-    <i class="fa-solid fa-paw"></i> Pet Shop
-</button>
-    </p>
+    <h3>Empresas em destaque</h3>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fa-solid fa-paw"></i>
+            <p>Pet Fiel</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-tv"></i>
+            <p>Uto Rápido</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-pizza-slice"></i>
+            <p>Pizzaria Bella</p>
+        </div>
+    </div>
 </section>
 
-<section class="section">
-    <h2>Por que escolher a gente?</h2>
-    <p>Atendimento rápido, soluções modernas e foco em resultados reais.</p>
-</section>
-
-<footer>
-    <p>© 2026 XarTins - Todos os direitos reservados</p>
+<footer class="bottom-nav">
+    <div>🏠<span>Início</span></div>
+    <div>🔍<span>Explore</span></div>
+    <div>🛒<span>carrinho</span></div>
+    <div>🔖<span>Salvo</span></div>
 </footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
