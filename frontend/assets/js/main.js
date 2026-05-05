@@ -34,7 +34,7 @@ empresas.forEach(empresa => {
 
 // ================= FUNÇÃO DE ABRIR PERFIL =================
 function abrirPerfil(id) {
-  window.location.href = `./pages/perfil.html?id=${id}`;
+  window.location.href = `./pages/perfilLoja.html?id=${id}`;
 }
 
 // ================= MENU =================

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil - XarTins</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/perfilUsuario.css">
+</head>
+
+<body class="profile-page">
+
+  <div class="profile-container">
+
+    <div class="profile-header"></div>
+
+    <div class="avatar">
+      <img id="profilePic" src="https://via.placeholder.com/110">
+      <input type="file" id="uploadPic" accept="image/*">
+      <label for="uploadPic">Alterar foto</label>
+    </div>
+
+    <div class="profile-content">
+      <h2 id="nome">Seu Nome</h2>
+      <p id="usuario">@usuario</p>
+
+      <!-- STATS -->
+      <div class="stats">
+        <div>
+          <strong>12</strong>
+          <span>Lojas</span>
+        </div>
+        <div>
+          <strong>34</strong>
+          <span>Favoritos</span>
+        </div>
+        <div>
+          <strong>5</strong>
+          <span>Pedidos</span>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="form-grid">
+
+        <div class="input-group">
+          <label>Nome</label>
+          <input type="text" id="inputNome">
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" id="inputEmail">
+        </div>
+
+        <div class="input-group">
+          <label>Telefone</label>
+          <input type="text" placeholder="(00) 00000-0000">
+        </div>
+
+        <div class="input-group">
+          <label>Senha</label>
+          <input type="password" placeholder="********">
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn save">Salvar</button>
+        <button class="btn logout">Sair</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="../assets/js/perfilUsuario.js"></script>
+</body>
+</html>
