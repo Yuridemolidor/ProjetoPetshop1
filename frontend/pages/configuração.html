@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Configurações - XarTins</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/configuracoes.css">
+
+</head>
+
+<body class="config-page">
+
+  <div class="container">
+    <h2>⚙️ Configurações</h2>
+
+    <!-- APARÊNCIA -->
+    <div class="section">
+      <h3>Aparência</h3>
+
+      <div class="option">
+        <label>Modo escuro</label>
+        <label class="switch">
+          <input type="checkbox" id="darkMode">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- NOTIFICAÇÕES -->
+    <div class="section">
+      <h3>Notificações</h3>
+
+      <div class="option">
+        <label>Receber notificações</label>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- SEGURANÇA -->
+    <div class="section">
+      <h3>Segurança</h3>
+
+      <div class="input-group">
+        <label>Nova senha</label>
+        <input type="password" placeholder="Digite nova senha">
+      </div>
+
+      <div class="input-group">
+        <label>Confirmar senha</label>
+        <input type="password" placeholder="Confirme a senha">
+      </div>
+
+      <button class="btn save">Salvar senha</button>
+    </div>
+
+    <!-- CONTA -->
+    <div class="section">
+      <h3>Conta</h3>
+
+      <button class="btn danger">Excluir conta</button>
+    </div>
+
+  </div>
+
+  <script>
+    const toggle = document.getElementById('darkMode');
+
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* ================= HTML ================= */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= BODY GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Roboto', 'Segoe UI', sans-serif;
+  background: #f4f6fb;
+  color: #333;
+  padding: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ================= ELEMENTOS BASE ================= */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ================= HEADER ================= */
+header {
+  margin-bottom: 20px;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ================= USER ICON ================= */
+.user-icon {
+  cursor: pointer;
+  background: #007BFF;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* ================= INPUT SEARCH ================= */
+.search {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #eaeef5;
+  transition: 0.3s;
+}
+
+.search:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 2px #007BFF33;
+  transform: scale(1.02);
+}
+
+/* ================= SECTION ================= */
+.section {
+  margin-top: 25px;
+}
+
+.section h3 {
+  margin-bottom: 15px;
+}
+
+/* ================= CATEGORIAS ================= */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cat {
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.cat:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cat:active {
+  transform: scale(0.95);
+}
+
+/* CORES */
+.pet { background: #f4c542; }
+.mec { background: #ff6b6b; color: white; }
+.res { background: #4dabf7; color: white; }
+.barb { background: #dee2e6; }
+.acad { background: #c5d8ff; }
+.elec { background: #ffe0b2; }
+
+/* ================= CARDS ================= */
+.cards {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  flex: 1;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+.card i {
+  font-size: 25px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.card:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* ================= MENU LATERAL ================= */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 220px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-lateral.active {
+  right: 0;
+}
+
+.menu-lateral a {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu-lateral a:hover {
+  background: #007BFF;
+  color: #fff;
+}
+
+.menu-lateral a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 2px;
+  background: #007BFF;
+  transition: 0.3s;
+}
+
+.menu-lateral a:hover::after {
+  width: 100%;
+}
+
+/* ================= MENU BUTTON ================= */
+.menu-toggle {
+  transition: 0.3s;
+}
+
+.menu-toggle:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
+/* ================= NAV INFERIOR ================= */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+.bottom-nav div {
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.bottom-nav div:hover {
+  transform: translateY(-3px);
+}
+
+.bottom-nav div:active {
+  transform: scale(0.9);
+}
+
+/* ================= ANIMAÇÃO ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header, .section, .card, .cat {
+  animation: fadeUp 0.5s ease;
+}
+
+/* ================= UTILITÁRIOS ================= */
+.hidden {
+  display: none;
+}

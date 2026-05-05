@@ -1,0 +1,168 @@
+/* ================= PAGE CONFIG ================= */
+
+/* container da página */
+.config-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* fundo com logo */
+.config-page::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: url('../images/logo-xartins.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* caixa principal */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* título */
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+/* seções */
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2563eb;
+}
+
+/* opções */
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.option label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* SWITCH */
+.switch {
+  position: relative;
+  width: 45px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 20px;
+  inset: 0;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #2563eb;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(21px);
+}
+
+/* inputs */
+.input-group {
+  margin-top: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+/* botões (reaproveita .btn do global) */
+.btn {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.save {
+  background: #2563eb;
+  color: #fff;
+}
+
+.save:hover {
+  background: #1d4ed8;
+}
+
+.danger {
+  background: #e11d48;
+  color: #fff;
+}
+
+.danger:hover {
+  background: #be123c;
+}
+
+/* ================= DARK MODE ================= */
+
+.config-page.dark {
+  background: #020617;
+}
+
+.config-page.dark .container {
+  background: #0f172a;
+  color: #fff;
+}
+
+.config-page.dark .section {
+  background: #1e293b;
+}
+
+.config-page.dark input {
+  background: #020617;
+  color: #fff;
+  border: 1px solid #334155;
+}
