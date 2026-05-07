@@ -84,19 +84,39 @@
     <div class="cards" id="lista-empresas"></div>
 </section>
 
-<footer class="bottom-nav">
-    <div>🏠<span>Início</span></div>
-    <div>🔍<span>Explore</span></div>
-    <div>🛒<span>carrinho</span></div>
-    <div>🔖<span>Salvo</span></div>
-</footer>
+<section class="section">
+    <h3>Produtos em destaque</h3>
 
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById("menu");
-        menu.classList.toggle("active");
-}
-</script>
+    <div class="products-grid" id="products-grid"></div>
+</section>
+
+<footer class="bottom-nav">
+
+    <div class="nav-item active">
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+    </div>
+
+    <div class="nav-item">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Categorias</span>
+    </div>
+
+    <div class="nav-item center-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    <div class="nav-item">
+        <i class="fa-solid fa-play"></i>
+        <span>Vídeos</span>
+    </div>
+
+    <div class="nav-item">
+        <i class="fa-solid fa-bars"></i>
+        <span>Mais</span>
+    </div>
+
+</footer>
 
 <script src="./assets/js/main.js"></script>
 
