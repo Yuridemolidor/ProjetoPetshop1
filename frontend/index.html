@@ -50,42 +50,104 @@
         <a href="#">Contas</a>
     </div>
 
-<header>
-        <div class="top-bar">
-            <div class="user-icon" onclick="window.location.href='./perfil.html'">
+    <div class="overlay" id="overlay"></div>
+
+<header class="hero-header">
+
+    <div class="top-bar">
+
+        <div class="profile-area">
+            <div class="user-icon">
                 <i class="fa-solid fa-user"></i>
             </div>
 
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="user-text">
+                <span class="welcome">Bem-vindo 👋</span>
+                <h2>Olá, usuário</h2>
+            </div>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
     </div>
 
-    <h2>Olá "usuario",</h2>
-    <p>O que gostaria de fazer a seguir?</p>
+    <div class="hero-content">
+        <p>Encontre produtos, serviços e empresas perto de você.</p>
 
-    <input type="text" placeholder="Pesquisar serviços..." class="search">
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                placeholder="Pesquisar serviços..."
+                class="search"
+            >
+        </div>
+    </div>
+
 </header>
 
 <section class="section">
-    <h3>Categorias populares</h3>
+    <div class="section-title">
+        <div>
+            <span>Explorar</span>
+            <h3>Categorias populares</h3>
+        </div>
+        <a href="#">Ver mais</a>
+    </div>
 
     <div class="categories">
-        <div class="cat pet">Petshop</div>
-        <div class="cat mec">Mecânica</div>
-        <div class="cat res">Restaurante</div>
-        <div class="cat barb">Barbearia</div>
-        <div class="cat acad">Academia</div>
-        <div class="cat elec">Eletrônicos</div>
+        <div class="cat pet">
+            <i class="fa-solid fa-paw"></i>
+            <span>Petshop</span>
+        </div>
+        <div class="cat mec">
+            <i class="fa-solid fa-wrench"></i>
+            <span>Mecânica</span>
+        </div>
+        <div class="cat res">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Restaurante</span>
+        </div>
+        <div class="cat barb">
+            <i class="fa-solid fa-scissors"></i>
+            <span>Barbearia</span>
+        </div>
+        <div class="cat acad">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Academia</span>
+        </div>
+        <div class="cat elec">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Eletrônicos</span>
+        </div>
     </div>
 </section>
 
 <section class="section">
-    <h3>Empresas em destaque</h3>
+    <div class="section-title">
+        <div>
+            <span>Explorar</span>
+            <h3>Empresas em destaque</h3>
+        </div>
+
+        <a href="#">Ver mais</a>
+    </div>
 
     <div class="cards" id="lista-empresas"></div>
 </section>
 
 <section class="section">
-    <h3>Produtos em destaque</h3>
+    <div class="section-title">
+        <div>
+            <span>Explorar</span>
+            <h3>Produtos populares</h3>
+        </div>
+
+        <a href="#">Ver mais</a>
+    </div>
 
     <div class="products-grid" id="products-grid"></div>
 </section>
@@ -118,7 +180,10 @@
 
 </footer>
 
-<script src="./assets/js/main.js"></script>
+<script
+  type="module"
+  src="./assets/js/pages/home.js">
+</script>
 
 </body>
 </html>
