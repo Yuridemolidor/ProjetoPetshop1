@@ -1,83 +1,404 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Configurações - XarTins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações - XarTins</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="../assets/css/reset.css">
-  <link rel="stylesheet" href="../assets/css/configuracoes.css">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
 
+    body{
+      background:#0f172a;
+      color:white;
+      padding:20px;
+    }
+
+    .container{
+      max-width:450px;
+      margin:auto;
+    }
+
+    .topo{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:25px;
+    }
+
+    .topo h1{
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .perfil{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:15px;
+      border-radius:22px;
+      backdrop-filter:blur(12px);
+      margin-bottom:25px;
+    }
+
+    .perfil img{
+      width:75px;
+      height:75px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid #2563eb;
+    }
+
+    .perfil h2{
+      font-size:18px;
+    }
+
+    .perfil p{
+      color:#94a3b8;
+      font-size:13px;
+    }
+
+    .btn-editar{
+      margin-top:8px;
+      background:#2563eb;
+      color:white;
+      border:none;
+      padding:8px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-editar:hover{
+      background:#1d4ed8;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:20px;
+      border-radius:22px;
+      margin-bottom:18px;
+      backdrop-filter:blur(14px);
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .card h3{
+      margin-bottom:18px;
+      font-size:20px;
+      color:#60a5fa;
+    }
+
+    .linha{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .linha:last-child{
+      margin-bottom:0;
+    }
+
+    .linha span{
+      color:#cbd5e1;
+      font-size:15px;
+    }
+
+    .switch{
+      position:relative;
+      width:55px;
+      height:28px;
+    }
+
+    .switch input{
+      display:none;
+    }
+
+    .slider{
+      position:absolute;
+      cursor:pointer;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:#475569;
+      border-radius:50px;
+      transition:0.4s;
+    }
+
+    .slider::before{
+      content:"";
+      position:absolute;
+      width:22px;
+      height:22px;
+      left:3px;
+      bottom:3px;
+      background:white;
+      border-radius:50%;
+      transition:0.4s;
+    }
+
+    input:checked + .slider{
+      background:#2563eb;
+    }
+
+    input:checked + .slider::before{
+      transform:translateX(27px);
+    }
+
+    input, select{
+      width:100%;
+      margin-top:10px;
+      margin-bottom:15px;
+      padding:14px;
+      border:none;
+      border-radius:14px;
+      background:#1e293b;
+      color:white;
+      outline:none;
+      font-size:15px;
+    }
+
+    .btn{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:14px;
+      background:#2563eb;
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+      transform:scale(1.02);
+    }
+
+    .btn-danger{
+      background:#e11d48;
+    }
+
+    .btn-danger:hover{
+      background:#be123c;
+    }
+
+    .tema-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .cor{
+      width:100%;
+      height:45px;
+      border-radius:14px;
+      cursor:pointer;
+      transition:0.3s;
+      border:2px solid transparent;
+    }
+
+    .cor:hover{
+      transform:scale(1.08);
+      border-color:white;
+    }
+
+    .azul{background:#2563eb;}
+    .roxo{background:#7c3aed;}
+    .verde{background:#16a34a;}
+    .rosa{background:#db2777;}
+
+    .info{
+      color:#94a3b8;
+      font-size:13px;
+      margin-top:5px;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:20px;
+      color:#64748b;
+      font-size:13px;
+    }
+
+  </style>
 </head>
+<body>
 
-<body class="config-page">
+<div class="container">
 
-  <div class="container">
-    <h2>⚙️ Configurações</h2>
-
-    <!-- APARÊNCIA -->
-    <div class="section">
-      <h3>Aparência</h3>
-
-      <div class="option">
-        <label>Modo escuro</label>
-        <label class="switch">
-          <input type="checkbox" id="darkMode">
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div>
-
-    <!-- NOTIFICAÇÕES -->
-    <div class="section">
-      <h3>Notificações</h3>
-
-      <div class="option">
-        <label>Receber notificações</label>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div>
-
-    <!-- SEGURANÇA -->
-    <div class="section">
-      <h3>Segurança</h3>
-
-      <div class="input-group">
-        <label>Nova senha</label>
-        <input type="password" placeholder="Digite nova senha">
-      </div>
-
-      <div class="input-group">
-        <label>Confirmar senha</label>
-        <input type="password" placeholder="Confirme a senha">
-      </div>
-
-      <button class="btn save">Salvar senha</button>
-    </div>
-
-    <!-- CONTA -->
-    <div class="section">
-      <h3>Conta</h3>
-
-      <button class="btn danger">Excluir conta</button>
-    </div>
-
+  <div class="topo">
+    <h1>Configurações</h1>
   </div>
 
-  <script>
-    const toggle = document.getElementById('darkMode');
+  <!-- PERFIL -->
+  <div class="perfil">
+    <img src="https://i.imgur.com/8Km9tLL.png">
+    
+    <div>
+      <h2>Vitor Xavier</h2>
+      <p>@xartins.oficial</p>
 
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark');
-    });
-  </script>
+      <button class="btn-editar">
+        Editar Perfil
+      </button>
+    </div>
+  </div>
+
+  <!-- APARÊNCIA -->
+  <div class="card">
+    <h3> Aparência</h3>
+
+    <div class="linha">
+      <span>Modo escuro</span>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="linha">
+      <span>Animações do sistema</span>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <p class="info">Escolha a cor principal do aplicativo:</p>
+
+    <div class="tema-grid">
+      <div class="cor azul"></div>
+      <div class="cor roxo"></div>
+      <div class="cor verde"></div>
+      <div class="cor rosa"></div>
+    </div>
+  </div>
+
+  <!-- NOTIFICAÇÕES -->
+  <div class="card">
+    <h3> Notificações</h3>
+
+    <div class="linha">
+      <span>Receber notificações</span>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="linha">
+      <span>Promoções e ofertas</span>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="linha">
+      <span>Som de notificação</span>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- SEGURANÇA -->
+  <div class="card">
+    <h3> Segurança</h3>
+
+    <input type="password" placeholder="Nova senha">
+
+    <input type="password" placeholder="Confirmar senha">
+
+    <button class="btn">
+      Salvar nova senha
+    </button>
+
+    <br><br>
+
+    <div class="linha">
+      <span>Autenticação em 2 etapas</span>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- IDIOMA -->
+  <div class="card">
+    <h3> Idioma</h3>
+
+    <select>
+      <option>Português (Brasil)</option>
+      <option>English</option>
+      <option>Español</option>
+    </select>
+
+    <button class="btn">
+      Salvar idioma
+    </button>
+  </div>
+
+  <!-- PRIVACIDADE -->
+  <div class="card">
+    <h3> Privacidade</h3>
+
+    <div class="linha">
+      <span>Perfil público</span>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="linha">
+      <span>Mostrar status online</span>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- CONTA -->
+  <div class="card">
+    <h3> Conta</h3>
+
+    <button class="btn btn-danger">
+      Excluir conta
+    </button>
+  </div>
+
+  <div class="footer">
+    XarTins © 2026 • Versão 3.0
+  </div>
+
+</div>
 
 </body>
 </html>
