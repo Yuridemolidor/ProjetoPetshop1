@@ -402,3 +402,145 @@
 
 </body>
 </html>
+<!-- =========================================
+CONFIGURAÇÃO EMPRESA + CADASTRO DE PRODUTOS
+ADICIONE ABAIXO DO SEU ÚLTIMO CARD
+========================================= -->
+
+<!-- EMPRESA -->
+<div class="card">
+  <h3> Empresa</h3>
+
+  <input type="text" placeholder="Nome da empresa">
+
+  <input type="text" placeholder="CPF do proprietário">
+
+  <input type="text" placeholder="CNPJ da empresa">
+
+  <input type="email" placeholder="E-mail empresarial">
+
+  <input type="tel" placeholder="Telefone da empresa">
+
+  <input type="text" placeholder="Endereço da empresa">
+
+  <textarea placeholder="Descrição da empresa"></textarea>
+
+  <label class="upload-label">
+     Foto da empresa
+  </label>
+
+  <input type="file" accept="image/*">
+
+  <label class="upload-label">
+    ️ Logo da empresa
+  </label>
+
+  <input type="file" accept="image/*">
+
+  <button class="btn">
+    Salvar Empresa
+  </button>
+</div>
+
+<!-- CADASTRO DE PRODUTOS -->
+<div class="card">
+  <h3> Cadastro de Produtos</h3>
+
+  <input type="text" placeholder="Nome do produto">
+
+  <input type="number" placeholder="Preço do produto">
+
+  <input type="number" placeholder="Quantidade em estoque">
+
+  <select>
+    <option>Categoria do produto</option>
+    <option>Ração</option>
+    <option>Brinquedos</option>
+    <option>Acessórios</option>
+    <option>Medicamentos</option>
+  </select>
+
+  <textarea placeholder="Descrição do produto"></textarea>
+
+  <label class="upload-label">
+     Foto do produto
+  </label>
+
+  <input type="file" accept="image/*">
+
+  <button class="btn">
+    Cadastrar Produto
+  </button>
+</div>
+
+<!-- GERENCIAMENTO -->
+<div class="card">
+  <h3> Gerenciamento</h3>
+
+  <div class="linha">
+    <span>Produtos ativos</span>
+    <strong>24</strong>
+  </div>
+
+  <div class="linha">
+    <span>Pedidos recebidos</span>
+    <strong>12</strong>
+  </div>
+
+  <div class="linha">
+    <span>Empresa verificada</span>
+
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="linha">
+    <span>Loja online</span>
+
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+</div>
+
+<style>
+
+textarea{
+  width:100%;
+  min-height:110px;
+  resize:none;
+  margin-top:10px;
+  margin-bottom:15px;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:#1e293b;
+  color:white;
+  outline:none;
+  font-size:15px;
+}
+
+input[type="file"]{
+  background:#111827;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.upload-label{
+  display:block;
+  margin-bottom:8px;
+  margin-top:10px;
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+strong{
+  color:#60a5fa;
+  font-size:16px;
+}
+
+</style>
