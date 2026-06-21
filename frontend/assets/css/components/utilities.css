@@ -1,0 +1,23 @@
+.hidden{
+
+  display: none;
+}
+
+.flex{
+
+  display: flex;
+}
+
+.grid{
+
+  display: grid;
+}
+
+.center{
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}

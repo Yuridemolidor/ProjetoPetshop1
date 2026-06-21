@@ -1,0 +1,58 @@
+/* Remove margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Melhor renderização de fontes */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Corpo base */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Imagens e mídia */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Inputs e botões herdam fonte */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Remove estilo padrão de botões */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Links sem decoração padrão */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Listas sem estilo */
+ul, ol {
+    list-style: none;
+}
+
+/* Tabelas mais limpas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Evita overflow estranho */
+html, body {
+    overflow-x: hidden;
+}

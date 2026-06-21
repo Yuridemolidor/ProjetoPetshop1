@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XarTins - Painel Empresarial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    max-width:480px;
+    margin:auto;
+}
+
+.topo{
+    margin-bottom:25px;
+}
+
+.topo h1{
+    font-size:32px;
+    font-weight:700;
+}
+
+.topo p{
+    color:#94a3b8;
+    margin-top:5px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card h2{
+    color:#60a5fa;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    margin-bottom:15px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#1e293b;
+    color:white;
+    outline:none;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+    min-height:100px;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#94a3b8;
+}
+
+.btn{
+    width:100%;
+    border:none;
+    padding:15px;
+    border-radius:14px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:scale(1.02);
+}
+
+.btn-danger{
+    background:#e11d48;
+}
+
+.btn-danger:hover{
+    background:#be123c;
+}
+
+.upload{
+    background:#111827;
+    padding:15px;
+    border-radius:14px;
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#cbd5e1;
+}
+
+.switch-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.switch{
+    position:relative;
+    display:inline-block;
+    width:55px;
+    height:28px;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#475569;
+    transition:.4s;
+    border-radius:50px;
+}
+
+.slider:before{
+    position:absolute;
+    content:"";
+    height:22px;
+    width:22px;
+    left:3px;
+    bottom:3px;
+    background:white;
+    transition:.4s;
+    border-radius:50%;
+}
+
+input:checked + .slider{
+    background:#2563eb;
+}
+
+input:checked + .slider:before{
+    transform:translateX(26px);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.stat{
+    background:#1e293b;
+    padding:18px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:28px;
+    color:#60a5fa;
+}
+
+.stat p{
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.produto{
+    background:#1e293b;
+    padding:15px;
+    border-radius:16px;
+    margin-top:15px;
+}
+
+.produto img{
+    width:100%;
+    border-radius:14px;
+    margin-bottom:10px;
+}
+
+.produto h4{
+    margin-bottom:5px;
+}
+
+.produto p{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#64748b;
+    font-size:13px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="topo">
+    <h1>⚙️ XarTins</h1>
+    <p>Painel Empresarial Premium</p>
+</div>
+
+<!-- PERFIL -->
+<div class="card">
+    <h2>👤 Perfil Empresarial</h2>
+
+    <input type="text" placeholder="Nome da empresa">
+
+    <input type="text" placeholder="Nome do proprietário">
+
+    <input type="email" placeholder="E-mail empresarial">
+
+    <input type="tel" placeholder="Telefone">
+
+    <input type="text" placeholder="CPF">
+
+    <input type="text" placeholder="CNPJ">
+
+    <input type="text" placeholder="Endereço da empresa">
+
+    <textarea placeholder="Descrição da empresa"></textarea>
+
+    <label>📸 Foto da empresa</label>
+    <div class="upload">
+        <input type="file">
+    </div>
+
+    <label>🖼️ Logo da empresa</label>
+    <div class="upload">
+        <input type="file">
+    </div>
+
+    <label>🌆 Banner da loja</label>
+    <div class="upload">
+        <input type="file">
+    </div>
+
+    <button class="btn">
+        Salvar Empresa
+    </button>
+</div>
+
+<!-- CONFIGURAÇÕES -->
+<div class="card">
+    <h2>🎨 Configurações</h2>
+
+    <div class="switch-box">
+        <span>Modo escuro</span>
+
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="switch-box">
+        <span>Receber notificações</span>
+
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="switch-box">
+        <span>Loja online</span>
+
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="switch-box">
+        <span>Empresa verificada</span>
+
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+</div>
+
+<!-- PRODUTOS -->
+<div class="card">
+    <h2>🛒 Cadastro de Produtos</h2>
+
+    <input type="text" placeholder="Nome do produto">
+
+    <input type="number" placeholder="Preço">
+
+    <input type="number" placeholder="Quantidade em estoque">
+
+    <select>
+        <option>Categoria</option>
+        <option>Ração</option>
+        <option>Brinquedos</option>
+        <option>Acessórios</option>
+        <option>Medicamentos</option>
+    </select>
+
+    <textarea placeholder="Descrição do produto"></textarea>
+
+    <label>📦 Foto do produto</label>
+
+    <div class="upload">
+        <input type="file">
+    </div>
+
+    <button class="btn">
+        Adicionar Produto
+    </button>
+
+    <!-- PRODUTO EXEMPLO -->
+    <div class="produto">
+
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1000&auto=format&fit=crop">
+
+        <h4>Ração Premium Golden</h4>
+
+        <p>R$ 129,90</p>
+
+        <br>
+
+        <button class="btn">
+            Editar Produto
+        </button>
+
+        <br><br>
+
+        <button class="btn btn-danger">
+            Remover Produto
+        </button>
+
+    </div>
+
+</div>
+
+<!-- HORÁRIO -->
+<div class="card">
+    <h2>🕒 Horário de Funcionamento</h2>
+
+    <input type="text" placeholder="Segunda a Sexta">
+
+    <input type="text" placeholder="Sábado">
+
+    <input type="text" placeholder="Domingo">
+
+    <button class="btn">
+        Salvar Horários
+    </button>
+</div>
+
+<!-- PIX -->
+<div class="card">
+    <h2>💳 Pagamentos PIX</h2>
+
+    <input type="text" placeholder="Chave PIX">
+
+    <label>📷 QR Code PIX</label>
+
+    <div class="upload">
+        <input type="file">
+    </div>
+
+    <button class="btn">
+        Salvar PIX
+    </button>
+</div>
+
+<!-- CUPOM -->
+<div class="card">
+    <h2>🎟️ Cupons</h2>
+
+    <input type="text" placeholder="Nome do cupom">
+
+    <input type="number" placeholder="Desconto %">
+
+    <button class="btn">
+        Criar Cupom
+    </button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="card">
+    <h2>📊 Dashboard</h2>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>24</h3>
+            <p>Produtos</p>
+        </div>
+
+        <div class="stat">
+            <h3>12</h3>
+            <p>Pedidos</p>
+        </div>
+
+        <div class="stat">
+            <h3>4.8</h3>
+            <p>Avaliação</p>
+        </div>
+
+        <div class="stat">
+            <h3>R$ 4.500</h3>
+            <p>Vendas</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- SEGURANÇA -->
+<div class="card">
+    <h2>🔒 Segurança</h2>
+
+    <input type="password" placeholder="Nova senha">
+
+    <input type="password" placeholder="Confirmar senha">
+
+    <button class="btn">
+        Alterar Senha
+    </button>
+</div>
+
+<!-- CONTA -->
+<div class="card">
+    <h2>🚨 Conta</h2>
+
+    <button class="btn btn-danger">
+        Excluir Conta
+    </button>
+</div>
+
+<div class="footer">
+    XarTins © 2026 - Painel Empresarial Inteligente
+</div>
+
+</div>
+
+</body>
+</html>

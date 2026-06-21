@@ -1,0 +1,53 @@
+.campo{
+
+  width: 100%;
+}
+
+.label{
+
+  display: block;
+
+  margin:
+    18px 0 8px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.input{
+
+  width: 100%;
+
+  padding:
+    15px 18px;
+
+  border-radius:
+    var(--radius-sm);
+
+  border:
+    1px solid #d8d8d8;
+
+  background: #fafafa;
+
+  transition:
+    var(--transition);
+}
+
+.input::placeholder{
+
+  color: #a0a8b5;
+}
+
+.input:focus{
+
+  outline: none;
+
+  border-color:
+    var(--primary);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(0,123,255,.12);
+}

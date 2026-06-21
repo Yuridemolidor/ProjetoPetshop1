@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil da Loja</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <!-- BASE -->
+  <link rel="stylesheet" href="../assets/css/base/reset.css">
+  <link rel="stylesheet" href="../assets/css/base/variables.css">
+  <link rel="stylesheet" href="../assets/css/base/global.css">
+  <link rel="stylesheet" href="../assets/css/base/typography.css">
+  <link rel="stylesheet" href="../assets/css/base/animations.css">
+  <link rel="stylesheet" href="../assets/css/base/responsive.css">
+
+  <!-- COMPONENTS -->
+  <link rel="stylesheet" href="../assets/css/components/buttons.css">
+  <link rel="stylesheet" href="../assets/css/components/forms.css">
+  <link rel="stylesheet" href="../assets/css/components/cards.css">
+  <link rel="stylesheet" href="../assets/css/components/navbar.css">
+  <link rel="stylesheet" href="../assets/css/components/menu.css">
+  <link rel="stylesheet" href="../assets/css/components/sections.css">
+  <link rel="stylesheet" href="../assets/css/components/search.css">
+  <link rel="stylesheet" href="../assets/css/components/categories.css">
+  <link rel="stylesheet" href="../assets/css/components/products.css">
+  <link rel="stylesheet" href="../assets/css/components/utilities.css">
+
+  <link rel="stylesheet" href="../assets/css/pages/perfilLoja.css">
+</head>
+
+<body>
+
+<header>
+  <div class="top-bar">
+    <span>☰</span>
+    <h2 id="nome-loja"></h2>
+    <div>🔍 🛒</div>
+  </div>
+
+  <div class="banner">
+    <div>
+      <h1 id="titulo-loja"></h1>
+      <p id="descricao-loja"></p>
+    </div>
+    <img id="img-loja">
+  </div>
+</header>
+
+<section class="tabs">
+  <button class="active" onclick="trocarAba('produtos', this)">Produtos</button>
+  <button onclick="trocarAba('servicos', this)">Serviços</button>
+</section>
+
+<section class="categorias">
+  <h3>Categorias</h3>
+  <div class="lista">
+    <div>🦴<p>Brinquedos</p></div>
+    <div>🍖<p>Alimentação</p></div>
+    <div>👕<p>Roupas</p></div>
+    <div>🧴<p>Higiene</p></div>
+    <div>🐾<p>Acessórios</p></div>
+  </div>
+</section>
+
+<section class="produtos" id="produtos">
+  <h3>Produtos em destaque</h3>
+  <div class="grid" id="lista-produtos"></div>
+</section>
+
+<section class="servicos hidden" id="servicos">
+  <h3>Serviços</h3>
+  <p id="texto-servicos"></p>
+</section>
+
+<footer>
+  <button onclick="menu('inicio')">🏠</button>
+  <button onclick="menu('explorar')">🔍</button>
+  <button class="central">🐾</button>
+  <button onclick="menu('salvos')">❤️</button>
+  <button onclick="menu('perfil')">👤</button>
+</footer>
+
+<script
+  type="module"
+  src="../assets/js/pages/perfilLoja.js">
+</script>
+
+</body>
+</html>
